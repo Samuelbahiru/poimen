@@ -1,0 +1,477 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Poimen Ministry</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  {% include 'company/include/head.html' %}
+ 
+</head>
+
+<body>
+
+    {% include 'company/include/navbar.html' %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+
+    <div class="info d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2 data-aos="fade-down">Welcome to <span>Poimen Ministry</span></h2>
+            <p data-aos="fade-up">To equip God's people for the works of service.</p>
+            <a data-aos="fade-up" data-aos-delay="200" href="contact.html" class="btn-get-started ">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <div class="carousel-item active" style="background-image: url({% static 'assets/img/hero-carousel/carsu1.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu2.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu3.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu4.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu5.jpg' %})"></div>
+
+      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="get-started section-bg">
+      <div class="container">
+
+        <div class="row justify-content-between gy-4">
+
+          <div class="col-lg-4 d-flex align-items-center" data-aos="fade-up">
+            <div class="content">
+              <h5> "In the same way, let your 
+                light shine before others, that 
+                they may see your good 
+                deeds and glorify your Father 
+                in heaven” (Matthew 5:16)" </h5>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade">
+            <form action="forms/quote.php" method="post" class="php-email-form">
+              <h3 class="text-warning">Get a Subscription</h3>
+              <p>...</p>
+              <div class="row gy-3">
+
+                <div class="col-md-12">
+                  <input type="text" name="name" class="form-control" placeholder="Name" required>
+                </div>
+
+                <div class="col-md-12 ">
+                  <input type="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your subscription request has been sent successfully. Thank you!</div>
+
+                  <button type="submit" class="btn btn-outline">Subscribe</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Quote Form -->
+
+        </div>
+
+      </div>
+    </section><!-- End Get Started Section -->
+
+
+    <!-- <section id="constructions" class="constructions">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Constructions</h2>
+          <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url({% static 'assets/img/constructions-1.jpg' %});"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Eligendi omnis sunt veritatis.</h4>
+                    <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url({% static 'assets/img/constructions-2.jpg' %});"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Possimus ut sed velit assumenda</h4>
+                    <p>Sunt deserunt maiores voluptatem autem est rerum perferendis rerum blanditiis. Est laboriosam qui iste numquam laboriosam voluptatem architecto. Est laudantium sunt at quas aut hic. Eum dignissimos.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url({% static 'assets/img/constructions-3.jpg' %});"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Error beatae dolor inventore aut</h4>
+                    <p>Dicta porro nobis. Velit cum in. Nesciunt dignissimos enim molestiae facilis numquam quae quaerat ipsam omnis. Neque debitis ipsum at architecto officia laboriosam odit. Ut sunt temporibus nulla culpa.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url({% static 'assets/img/constructions-4.jpg' %});"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Expedita voluptas ut ut nesciunt</h4>
+                    <p>Aut est quidem doloremque voluptatem magnam quis excepturi vero quia. Eum eos doloremque architecto illo at beatae dolore. Fugiat suscipit et sint ratione dolores. Aut aliquid ea dolores libero nobis.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+    <!--About us section -->
+    <section id="about" class="about" style="margin-top: -25px;">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title h3 text-warning" >
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <h4>History of Poimen Ministry</h4>
+            <hr class="text-primary fw-bold h2 py-2 my-2"/>
+            <p>
+              God wants all people to hear 
+              the good news of Jesus Christ 
+              and receive eternal salvation. 
+              To hear the gospel, people 
+              need to have access to the 
+              sound teachings of God’s 
+              Word. 
+              </p>
+              <p style="text-align: justify;" >
+              We believe that the Church 
+              has the primary responsibility 
+              for teaching the gospel of Jesus Christ to people. However, the Church needs support 
+              to preach and teach the Gospel to believers and reach out 
+              to unreached people. 
+              Poimen Ministry was established to support the preaching and teaching of the true 
+              Gospel of Jesus Christ. 
+              Poimen Ministry is a Christian 
+              organization registered by the 
+              Ethiopian Gospel Believers’ 
+              Churches Council and has a 
+              legal license to do ministry. 
+              Poimen Ministry is governed 
+              by seasoned and devoted 
+              board of directors. 
+            </p>
+            <button class="btn btn-outline-warning"> Read More</button>
+           
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h4>Vision, Mission and Core Values</h4>
+            <hr class="text-primary fw-bold h2 py-2 my-2"  />
+            <div class="row">
+              
+                <h5 class=" text-warning">Mission</h5>
+                <p> Poimen Ministry exists to provide 
+                  Bible-based teaching, counseling 
+                  and holistic support to Christ’s followers to be fruitful in their lives.
+                  </p>
+              
+             </div>
+             <div class="row" >
+                <h5  class="text-warning ">Vision</h5>
+                <p>To see believers, Christian families 
+                  and Church ministers built on the 
+                  Word of God, live godly life and 
+                  bring people to Christ and help 
+                  them grow in Christian faith. 
+                  </p>
+            </div>
+            <div class="row">
+                  <h5  class="text-warning">Core Values </h5>
+                  <p>The Ministry abides by the following core values</p>
+          
+            <ul style="margin-left: 50px;">
+              <li > Integrity </li>
+              <li> Stewardship</li>
+              <li> Transparency</li>
+              <li> Partnership </li>
+            </ul>
+            </div>
+           
+           
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+    <!--About section end-->
+    <!-- ======= Services Section ======= -->
+    <section id="recent-blog-posts" class="recent-blog-posts">
+      <div class="container" data-aos="fade-up">
+
+    
+    
+  <div class=" section-header">
+        <h2>Recent News Posts</h2>
+        <!-- <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p> -->
+      </div>
+
+      <div class="row gy-5">
+
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="post-item position-relative h-100">
+
+            <div class="post-img position-relative overflow-hidden">
+              <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="">
+              <span class="post-date">December 12</span>
+            </div>
+
+            <div class="post-content d-flex flex-column">
+
+              <h3 class="post-title">title ... </h3>
+
+              <div class="meta d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
+                </div>
+                <br>
+               
+                <button class="btn btn-outline-primary" > <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                </button>
+              </div>
+
+
+             
+
+             
+            </div>
+
+          </div>
+        </div><!-- End post item -->
+
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="post-item position-relative h-100">
+
+            <div class="post-img position-relative overflow-hidden">
+              <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="">
+              <span class="post-date">December 12</span>
+            </div>
+
+            <div class="post-content d-flex flex-column">
+
+              <h3 class="post-title">title ... </h3>
+
+              <div class="meta d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
+                </div>
+                <br>
+                
+                <button  class="btn btn-outline-primary" > <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                </button>
+              </div>
+
+             
+             
+
+            </div>
+
+          </div>
+        </div><!-- End post item -->
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="post-item position-relative h-100">
+
+            <div class="post-img position-relative overflow-hidden">
+              <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="">
+              <span class="post-date">December 12</span>
+            </div>
+
+            <div class="post-content d-flex flex-column">
+
+              <h3 class="post-title">title ... </h3>
+
+              <div class="meta d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
+                </div>
+                <br>
+                
+                <button  class="btn btn-outline-primary" > <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                </button>
+              </div>
+
+             
+             
+
+            </div>
+
+          </div>
+        </div><!-- End post item -->
+
+ 
+
+      </div>
+
+      </div>
+    </section>
+
+
+    <section id="services" class="services section-bg">
+      <div class="container" data-aoss="fade-up">
+
+        <div class="section-header">
+          <h2>Resources</h2>
+          
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
+              </div>
+              <h3>What is Marriage?</h3>
+              <p>...</p>
+              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
+            </div>  
+          </div><!-- End Service Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
+              </div>
+              <h3>What is Marriage?</h3>
+              <p>...</p>
+              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
+            </div>  
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
+              </div>
+              <h3>What is Marriage?</h3>
+              <p>...</p>
+              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
+            </div>  
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
+              </div>
+              <h3>What is Marriage?</h3>
+              <p>...</p>
+              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
+            </div>  
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
+              </div>
+              <h3>What is Marriage?</h3>
+              <p>...</p>
+              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
+            </div>  
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
+              </div>
+              <h3>What is Marriage?</h3>
+              <p>...</p>
+              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
+            </div>  
+          </div><!-- End Service Item -->
+
+        
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+    <!-- ======= Recent Blog Posts Section ======= -->
+ 
+    <!-- End Recent Blog Posts Section -->
+
+  </main><!-- End #main -->
+
+   {% include 'company/include/footer.html'%}
+   
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+   {% include 'company/include/vendor.html'%}
+
+</body>
+
+</html>
