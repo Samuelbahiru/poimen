@@ -278,26 +278,27 @@
       </div>
 
       <div class="row gy-5">
-
+        
+       {% for blog in recent_blog%} 
         <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
           <div class="post-item position-relative h-100">
 
             <div class="post-img position-relative overflow-hidden">
-              <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="">
-              <span class="post-date">December 12</span>
+              <img src="/media/{{blog.image}}" class="img-fluid" alt="">
+              <span class="post-date">{{blog.created_at | timesince  }} ago</span>
             </div>
 
             <div class="post-content d-flex flex-column">
 
-              <h3 class="post-title">title ... </h3>
+              <h3 class="post-title">{{blog.title}}</h3>
 
               <div class="meta d-flex align-items-center">
-                <div class="d-flex align-items-center">
+                <!-- <div class="d-flex align-items-center">
                   <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
-                </div>
+                </div> -->
                 <br>
                
-                <button class="btn btn-outline-primary" > <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <button class="btn btn-outline-primary" > <a href="{% url 'blog_detail' blog.slug %}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
                 </button>
               </div>
 
@@ -309,67 +310,7 @@
 
           </div>
         </div><!-- End post item -->
-
-        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="post-item position-relative h-100">
-
-            <div class="post-img position-relative overflow-hidden">
-              <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="">
-              <span class="post-date">December 12</span>
-            </div>
-
-            <div class="post-content d-flex flex-column">
-
-              <h3 class="post-title">title ... </h3>
-
-              <div class="meta d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
-                </div>
-                <br>
-                
-                <button  class="btn btn-outline-primary" > <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-                </button>
-              </div>
-
-             
-             
-
-            </div>
-
-          </div>
-        </div><!-- End post item -->
-        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="post-item position-relative h-100">
-
-            <div class="post-img position-relative overflow-hidden">
-              <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="">
-              <span class="post-date">December 12</span>
-            </div>
-
-            <div class="post-content d-flex flex-column">
-
-              <h3 class="post-title">title ... </h3>
-
-              <div class="meta d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
-                </div>
-                <br>
-                
-                <button  class="btn btn-outline-primary" > <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-                </button>
-              </div>
-
-             
-             
-
-            </div>
-
-          </div>
-        </div><!-- End post item -->
-
- 
+       {% endfor %}
 
       </div>
 
