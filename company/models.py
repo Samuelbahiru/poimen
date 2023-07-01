@@ -2,7 +2,10 @@ from django.db import models
 from froala_editor.fields import FroalaField
 from django.utils.text import slugify
 from unidecode import unidecode
+from fontawesome_5.fields import IconField
 
+
+#Blog Model
 class Blog_Categories(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True,blank=True)
@@ -13,17 +16,16 @@ class Blog_Categories(models.Model):
         super().save(*args, **kwargs)
     
     def count_categories(self):
-        return Blog.objects.filter(__type = self.name).count()
+        return Blog.objects.filter(type__name = self.name).count()
     
     def __str__(self) -> str:
         return self.name
 
 class Blog(models.Model):
     title = models.CharField(max_length=200)
-    short_description = models.CharField(max_length=200)
     image = models.ImageField(upload_to='blog/image/')
     content = FroalaField()
-    slug = models.SlugField(max_length=100, unique=True,blank=True)
+    slug = models.SlugField(max_length=300, unique=True,blank=True)
     type = models.ManyToManyField(Blog_Categories)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -36,8 +38,81 @@ class Blog(models.Model):
             self.slug = slugify(unidecode(self.title))
         super().save(*args, **kwargs)
 
+    def count_comment(self):
+      return Blog_Comment.objects.filter(post__id = self.pk, status = True).count()
 
     def __str__(self) -> str:
         return self.title
     
+class Blog_Comment(models.Model):
+   name = models.CharField(max_length=200)
+   email = models.EmailField()
+   comment = models.TextField()
+   website = models.URLField()
+   post = models.ForeignKey(Blog, on_delete=models.CASCADE)
+   status  = models.BooleanField(default=False)
+   date = models.DateTimeField(auto_now=True)
+   
+   
+   def __str__(self):
+      return self.name
+    
+#Resource Model
+class Resource(models.Model):
+    title = models.CharField(max_length=200)
+    icon = IconField()
+    image = models.ImageField(upload_to='blog/image/')
+    short_description = models.CharField(max_length=300)
+    document_link = models.URLField(max_length=200)
+    content = FroalaField()
+    slug = models.SlugField(max_length=300, unique=True,blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+      ordering = ['-created_at', '-updated_at']
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(unidecode(self.title))
+        super().save(*args, **kwargs)
+
+    def count_comment(self):
+      return Blog_Comment.objects.filter(post__id = self.pk, status = True).count()
+
+    def __str__(self) -> str:
+        return self.title
+
+#Service 
+class Service(models.Model):
+    icon = IconField()
+    image = models.ImageField(upload_to='company/service/')
+    title = models.CharField(max_length=50)
+    short_description = models.CharField(max_length=300)
+    content = FroalaField()
+
+
+    def __str__(self) -> str:
+        return self.title
+    
+#Gallery 
+
+class Gallery_Categories(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self) -> str:
+        return self.name
+    
+class Gallery(models.Model):
+    title = models.CharField(max_length=100)
+    category = models.ForeignKey(Gallery_Categories,on_delete=models.CASCADE, null=True)
+    image = models.ImageField(upload_to='company/gallery')
+    slug = models.SlugField(max_length=100, unique=True,blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(unidecode(self.title))
+        super().save(*args, **kwargs)
+
+    def __str__(self) -> str:
+        return self.title

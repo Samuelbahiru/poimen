@@ -1,9 +1,10 @@
 {% load static %}
-
+{% load fontawesome_5 %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+  {% fontawesome_5_static %} 
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -328,71 +329,19 @@
 
         <div class="row gy-4">
 
+          {% for resource in resources %}
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item  position-relative">
               <div class="icon">
+                {{resource.icon.as_html}}
                 <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
               </div>
-              <h3>What is Marriage?</h3>
-              <p>...</p>
-              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
+              <h3>{{resource.title}}</h3>
+              <p>{{resource.short_description}}</p>
+              <a href="{{resource.document_link}}" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
             </div>  
           </div><!-- End Service Item -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
-              </div>
-              <h3>What is Marriage?</h3>
-              <p>...</p>
-              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
-            </div>  
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
-              </div>
-              <h3>What is Marriage?</h3>
-              <p>...</p>
-              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
-            </div>  
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
-              </div>
-              <h3>What is Marriage?</h3>
-              <p>...</p>
-              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
-            </div>  
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
-              </div>
-              <h3>What is Marriage?</h3>
-              <p>...</p>
-              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
-            </div>  
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
-              </div>
-              <h3>What is Marriage?</h3>
-              <p>...</p>
-              <a href="#" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
-            </div>  
-          </div><!-- End Service Item -->
-
+         {% endfor %}
         
         </div>
 

@@ -19,8 +19,8 @@
           <li><a href="{% url 'index'%}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
           <li><a href="{% url 'about'%}" class="{% if request.path == '/about/' %}active{% endif %}" >About</a></li>
           <li><a href="{% url 'service'%}" class="{% if request.path == '/services/' %}active{% endif %}">Training Services</a></li>
-          <li><a href="{% url 'project' %}" class="{% if request.path == '/projects/' %}active{% endif %}">Gallery</a></li>
-          <li><a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %}active{% endif %}">Resources</a></li>
+          <li><a href="{% url 'gallery' %}" class="{% if request.path == '/gallery/' %}active{% endif %}">Gallery</a></li>
+          <li><a href="{% url 'resource' %}" class="{% if request.path == '/resource/' %}active{% endif %}">Resources</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
