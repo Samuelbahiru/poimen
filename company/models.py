@@ -62,6 +62,7 @@ class Blog_Comment(models.Model):
 #Resource Model
 class Resource(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    author_image = models.ImageField(upload_to='author/image/')
     author_description = models.TextField(null=True, blank=True)
     title = models.CharField(max_length=200)
     icon = IconField()
