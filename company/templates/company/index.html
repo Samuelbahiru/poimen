@@ -28,7 +28,7 @@
           <div class="col-lg-6 text-center">
             <h2 data-aos="fade-down">Welcome to <span>Poimen Ministry</span></h2>
             <p data-aos="fade-up">To equip God's people for the works of service.</p>
-            <a data-aos="fade-up" data-aos-delay="200" href="contact.html" class="btn-get-started ">Read More</a>
+            <a data-aos="fade-up" data-aos-delay="200" href="#main" class="btn-get-started ">Read More</a>
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade">
+          <div class="col-lg-6 shadow-lg" data-aos="fade" >
             <form action="forms/quote.php" method="post" class="php-email-form">
               <h3 class="text-warning">Get a Subscription</h3>
               <p>...</p>
@@ -107,97 +107,16 @@
       </div>
     </section><!-- End Get Started Section -->
 
-
-    <!-- <section id="constructions" class="constructions">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Constructions</h2>
-          <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p>
-        </div>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url({% static 'assets/img/constructions-1.jpg' %});"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Eligendi omnis sunt veritatis.</h4>
-                    <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url({% static 'assets/img/constructions-2.jpg' %});"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Possimus ut sed velit assumenda</h4>
-                    <p>Sunt deserunt maiores voluptatem autem est rerum perferendis rerum blanditiis. Est laboriosam qui iste numquam laboriosam voluptatem architecto. Est laudantium sunt at quas aut hic. Eum dignissimos.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url({% static 'assets/img/constructions-3.jpg' %});"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Error beatae dolor inventore aut</h4>
-                    <p>Dicta porro nobis. Velit cum in. Nesciunt dignissimos enim molestiae facilis numquam quae quaerat ipsam omnis. Neque debitis ipsum at architecto officia laboriosam odit. Ut sunt temporibus nulla culpa.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url({% static 'assets/img/constructions-4.jpg' %});"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Expedita voluptas ut ut nesciunt</h4>
-                    <p>Aut est quidem doloremque voluptatem magnam quis excepturi vero quia. Eum eos doloremque architecto illo at beatae dolore. Fugiat suscipit et sint ratione dolores. Aut aliquid ea dolores libero nobis.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section> -->
+     
+    </section> 
     <!--About us section -->
-    <section id="about" class="about" style="margin-top: -25px;">
+    <section id="about" class="about" style="margin-top: -75px;">
       <div class="container" data-aos="fade-up">
-
-        <div class="section-title h3 text-warning" >
-          <h2>About Us</h2>
-        </div>
-
         <div class="row content">
-          <div class="col-lg-6">
+          <h3 style="margin-bottom: 0px;" class="text-warning fw-bold">About Us</h3>
+          <div class="col-lg-6 my-3">
             <h4>History of Poimen Ministry</h4>
-            <hr class="text-primary fw-bold h2 py-2 my-2"/>
+            <hr class="text-primary fw-bold h2 py-2 mb-2"/>
             <p>
               God wants all people to hear 
               the good news of Jesus Christ 
@@ -224,7 +143,7 @@
               by seasoned and devoted 
               board of directors. 
             </p>
-            <button class="btn btn-outline-warning"> Read More</button>
+            <a href="{% url 'about'  %}"><button class="btn btn-outline-warning"> Read More</button></a>
            
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
@@ -267,13 +186,14 @@
       </div>
     </section><!-- End About Us Section -->
     <!--About section end-->
-    <!-- ======= Services Section ======= -->
+
+    <!-- ======= News or Blogs start ======= -->
     <section id="recent-blog-posts" class="recent-blog-posts">
       <div class="container" data-aos="fade-up">
 
     
     
-  <div class=" section-header">
+  <div style="margin-top: -80px;" class=" section-header">
         <h2>Recent News Posts</h2>
         <!-- <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p> -->
       </div>
@@ -291,7 +211,7 @@
 
             <div class="post-content d-flex flex-column">
 
-              <h3 class="post-title">{{blog.title}}</h3>
+              <h3 class="post-title text-dark h5">{{blog.title}}</h3>
 
               <div class="meta d-flex align-items-center">
                 <!-- <div class="d-flex align-items-center">
@@ -299,7 +219,7 @@
                 </div> -->
                 <br>
                
-                <button class="btn btn-outline-primary" > <a href="{% url 'blog_detail' blog.slug %}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <button class="btn btn-outline-info my-3" > <a href="{% url 'blog_detail' blog.slug %}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
                 </button>
               </div>
 
@@ -318,8 +238,8 @@
       </div>
     </section>
 
-
-    <section id="services" class="services section-bg">
+      <!-- Resources Section -->
+    <section style="margin-top: -70px;" id="services" class="services section-bg">
       <div class="container" data-aoss="fade-up">
 
         <div class="section-header">
@@ -333,11 +253,12 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item  position-relative">
               <div class="icon">
-                {{resource.icon.as_html}}
-                <!-- <i class="fa-sharp fa-regular fa-books"></i> -->
+               <i class="mx-4 text-light ">{{resource.icon.as_html}}</i> 
+               
               </div>
               <h3>{{resource.title}}</h3>
               <p>{{resource.short_description}}</p>
+              <a href=""> <button class="btn btn-outline-info my-2">Read More</button></a>
               <a href="{{resource.document_link}}" class="readmore stretched-link"> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button>  </a>
             </div>  
           </div><!-- End Service Item -->
@@ -346,12 +267,7 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
-
-
-    <!-- ======= Recent Blog Posts Section ======= -->
- 
-    <!-- End Recent Blog Posts Section -->
+    </section><!-- End Resource Section -->
 
   </main><!-- End #main -->
 
