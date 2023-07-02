@@ -50,7 +50,7 @@
               </div>
               <h3>{{service.title}}</h3>
               <p>{{service.short_description}}</p>
-              <a href="{% url 'service_detail' %}" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+              <a href="{% url 'service_detail' service.slug %}" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
