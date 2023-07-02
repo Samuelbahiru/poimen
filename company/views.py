@@ -35,9 +35,8 @@ def service(request):
     services = models.Service.objects.all()
 
     context = {
-        'services' : services
+        'services' : services,
     }
-
     return render(request, 'company/services.html', context)
 
 def service_detail(request, slug):
