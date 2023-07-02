@@ -28,7 +28,7 @@
         >
           <h2>Resource Details</h2>
           <ol>
-            <li><a href="{% url 'index'%}">Home</a></li>
+            <li><a href="{% url 'resource'%}">Resource</a></li>
             <li>Resource Details</li>
           </ol>
         </div>
@@ -117,9 +117,9 @@
                     <div>
                       <h5>
                         <a href="">{{comment.name}}</a>
-                        <a href="#" class="reply"
+                        <!-- <a href="#" class="reply"
                           ><i class="bi bi-reply-fill"></i> Reply</a
-                        >
+                        > -->
                       </h5>
                       <time datetime="2020-01-01"
                         >{{comment.date | date:'F d, Y'}}</time
