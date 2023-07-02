@@ -63,12 +63,18 @@ def resource_detail(request, slug):
 
     comment = models.Resource_Comment.objects.filter(status = True, post__id = resource_detail.id)
     
+    context = {
+        'resource' : resource_detail,
+        'comments' : comment
+    }
+
     if request.method == "POST":
       
       name = request.POST.get('name')
       email = request.POST.get('email')
       website = request.POST.get('website')
       comment = request.POST.get('comment')
+    
       
       obj = models.Resource_Comment()
       obj.name = name
@@ -76,24 +82,29 @@ def resource_detail(request, slug):
       obj.website = website
       obj.comment = comment
       obj.post = resource_detail
+      obj.status = True
       obj.save()
 
-    context = {
-        'resource' : resource_detail,
-        'comments' : comment
-    }
+      return render(request, 'company/resource-details.html', context)
+
+    
 
     return render(request, 'company/resource-details.html', context)
 
 def blog_detail(request, slug):
 
     blog_detail = models.Blog.objects.filter(slug = slug).first()
-    blogs = models.Blog.objects.all()
-    recent_blogs = []
-    for blog in range(0,5,1):
-        recent_blogs.append(blogs[blog])
+    recent_blogs = models.Blog.objects.all()[:5]
     
     comment = models.Blog_Comment.objects.filter(status = True, post__id = blog_detail.id)
+
+    context = {
+        'blog' : blog_detail,
+        'categories' : models.Blog_Categories.objects.all(),
+        'recent_blogs' : recent_blogs,
+        'comments' : comment,
+    }
+
 
     if request.method == "POST":
       
@@ -108,15 +119,13 @@ def blog_detail(request, slug):
       obj.website = website
       obj.comment = comment
       obj.post = blog_detail
+      obj.status = True
       obj.save()
 
+      return render(request, 'company/blog-details.html', context)
 
-    context = {
-        'blog' : blog_detail,
-        'categories' : models.Blog_Categories.objects.all(),
-        'recent_blogs' : recent_blogs,
-        'comments' : comment,
-    }
+
+
     return render(request, 'company/blog-details.html', context)
 
 def send_email(request):
