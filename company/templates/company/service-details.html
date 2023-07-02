@@ -37,20 +37,18 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-4">
-            <div class="services-list">
-              <a href="#" class="active">Remodeling</a>
-              <a href="#">Construction</a>
-              <a href="#">Product Management</a>
-              <a href="#">Repairs</a>
-              <a href="#">Design</a>
-            </div>
-
-            <h4>Enim qui eos rerum in delectus</h4>
-            <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
+          <div class="col-lg-12">
+            <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+              <li data-filter="*" class="filter-active">All</li>
+              {% for categories in gallery_categories %}
+              <li data-filter=".filter-{{categories.name}}">{{categories.name}}</li>
+              {% endfor %}
+              
+              
+            </ul>
           </div>
 
-          <div class="col-lg-8">
+          <div class="row">
             <img src="{% static 'assets/img/services.jpg' %}" alt="" class="img-fluid services-img">
             <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
             <p>

@@ -81,3 +81,25 @@ def blog_detail(request, slug):
         'comments' : comment,
     }
     return render(request, 'company/blog-details.html', context)
+
+def send_email(request):
+    if request.method == 'POST':
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        subject = request.POST.get('subject', '')
+        message = request.POST.get('message', '')
+
+        # Send the email
+        send_mail(
+            subject,
+            f"Name: {name}\nEmail: {email}\n\n{message}",
+            email,
+            ['samuelbahiru93@gmail.com'],
+            fail_silently=False,
+        )
+
+        # Return a JSON response to indicate success
+        return JsonResponse({'success': True})
+
+    # Return a JSON response to indicate an error
+    return JsonResponse({'success': False})

@@ -31,13 +31,15 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'admin_interface',
+    'colorfield',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'company',
@@ -138,3 +140,24 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+
+# ...
+
+# settings.py
+
+# ...
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 25  # Use the port number of your local SMTP server
+EMAIL_HOST_USER = ''  
+EMAIL_HOST_PASSWORD = ''  
+EMAIL_USE_TLS = False  # Set it to True if your local SMTP server requires TLS
+DEFAULT_FROM_EMAIL = 'samuelbahiru93@gmail.com'
+
+# ...
+
+
+# ...
