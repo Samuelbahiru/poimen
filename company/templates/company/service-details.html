@@ -39,8 +39,10 @@
 
           <div class="col-12 col-md-12">
             <img width = "400px" height = "350px" src="/media/{{service.image}}" alt="" class="img-fluid " >
-            <h3>{{service.title}}</h3>
-            {{service.content | safe }}
+    
+            <h3 class="text-info my-2">{{service.title}}</h3>
+            <p class="shadow-lg border"> {{service.content | safe }}</p>
+           
         </div>
 
       </div>
