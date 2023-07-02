@@ -42,7 +42,7 @@
             <div class="col-lg-10">
               <article class="blog-details">
                 <div class="post-img">
-                  <img width = "200px" height= "150px" src="/media/{{resource.image}}" alt="" class="img-fluid" />
+                  <img src="/media/{{resource.image}}" alt="" class="img-fluid" />
                 </div>
 
                 <!-- start meta top-->
@@ -82,7 +82,7 @@
                   alt=""
                 />
                 <div>
-                  <h4>Jane Smith</h4>
+                  <h4>{{resource.user}}</h4>
                   <div class="social-links">
                     <a href="https://twitters.com/#"
                       ><i class="bi bi-twitter"></i
@@ -95,10 +95,7 @@
                     ></a>
                   </div>
                   <p>
-                    Itaque quidem optio quia voluptatibus dolorem dolor. Modi
-                    eum sed possimus accusantium. Quas repellat voluptatem
-                    officia numquam sint aspernatur voluptas. Esse et
-                    accusantium ut unde voluptas.
+                    {{resource.author_description}}
                   </p>
                 </div>
               </div>

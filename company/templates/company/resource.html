@@ -38,12 +38,12 @@
 
         <div class="row gy-4 posts-list">
           
-          {% for resource in resources%}
+          {% for resource in page%}
           <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
 
               <div class="post-img position-relative overflow-hidden">
-                <img src="/media/{{resource.image}}" class="img-fluid" alt="">
+                <img   src="/media/{{resource.image}}" class="img-fluid" alt="">
                 <span class="post-date">{{resource.created_at | timesince}}</span>
               </div>
 
@@ -53,7 +53,7 @@
 
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">John Doe</span>
+                    <i class="bi bi-person"></i> <span class="ps-2">{{resource.user}}</span>
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
@@ -77,11 +77,26 @@
 
         </div><!-- End blog posts list -->
 
+    
+
         <div class="blog-pagination">
           <ul class="justify-content-center">
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
+
+            {% if page.has_previous %}
+            <li><a href="?page={{ page.previous_page_number }}">{{ page.previous_page_number }}</a></li>
+          {% endif %}
+    
+          <span class="current-page">
+            <li class="active" ><a href="#">{{ page.number }}</a></li>
+            {% comment %} Page {{ page.number }} of {{ page.paginator.num_pages }}. {% endcomment %}
+          </span>
+    
+          {% if page.has_next %}
+            <li><a href="?page={{ page.next_page_number }}">{{ page.next_page_number }}</a></li>
+  
+          {% endif %}
+              
+
           </ul>
         </div><!-- End blog pagination -->
 
