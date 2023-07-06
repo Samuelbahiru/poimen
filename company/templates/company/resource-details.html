@@ -105,7 +105,7 @@
               <div class="comments">
                 <h4 class="comments-count">{{resource.count_comment}} Comments</h4>
 
-                {% for comment in comments %}
+                {% for cm in comment %}
                 <div id="comment-1" class="comment">
                   <div class="d-flex">
                     <div class="comment-img">
@@ -116,15 +116,15 @@
                     </div>
                     <div>
                       <h5>
-                        <a href="">{{comment.name}}</a>
+                        <a href="">{{cm.name}}</a>
                         <!-- <a href="#" class="reply"
                           ><i class="bi bi-reply-fill"></i> Reply</a
                         > -->
                       </h5>
                       <time datetime="2020-01-01"
-                        >{{comment.date | date:'F d, Y'}}</time
+                        >{{cm.date | date:'F d, Y'}}</time
                       >
-                      <p>{{comment.comment}}</p>
+                      <p>{{cm.comment}}</p>
                     </div>
                   </div>
                 </div>
@@ -138,13 +138,13 @@
                     are marked *
                   </p>
                   <form action="" method="post">
-                    {% csrf_token %}
+                    {% csrf_token %}          
                     <div class="row">
                       <div class="col-md-6 form-group">
                         <input
                           name="name"
                           type="text"
-                          class="form-control"
+                          class="form-control {% if form.name.errors %} is-invalid {% endif %} "
                           placeholder="Your Name*"
                           id="id_name"
                         />
@@ -153,18 +153,19 @@
                         <input
                           name="email"
                           type="text"
-                          class="form-control"
+                          class="form-control{% if form.email.errors %} is-invalid {% endif %} "
                           placeholder="Your Email*"
                           id="id_email"
                         />
                       </div>
                     </div>
+
                     <div class="row">
                       <div class="col form-group">
                         <input
                           name="website"
                           type="text"
-                          class="form-control"
+                          class="form-control {% if form.website.errors %} is-invalid {% endif %} "
                           placeholder="Your Website"
                           id="id_website"
                         />
@@ -174,7 +175,7 @@
                       <div class="col form-group">
                         <textarea
                           name="comment"
-                          class="form-control"
+                          class="form-control {% if form.comment.errors %} is-invalid {% endif %} "
                           placeholder="Your Comment*"
                           id="id_comment"
                         ></textarea>

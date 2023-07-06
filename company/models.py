@@ -92,9 +92,9 @@ class Resource_Comment(models.Model):
    name = models.CharField(max_length=200)
    email = models.EmailField()
    comment = models.TextField()
-   website = models.URLField()
-   post = models.ForeignKey(Resource, on_delete=models.CASCADE)
-   status  = models.BooleanField(default=False)
+   website = models.URLField(blank=True, null=True)
+   post = models.ForeignKey(Resource, on_delete=models.SET_NULL, null=True)
+   status  = models.BooleanField(default=True)
    date = models.DateTimeField(auto_now=True)
    
    
@@ -120,7 +120,6 @@ class Service(models.Model):
         return self.title
     
 #Gallery 
-
 class Gallery_Categories(models.Model):
     name = models.CharField(max_length=50)
 
@@ -140,3 +139,13 @@ class Gallery(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+#Subscription 
+class Subscription(models.Model):
+    name = models.CharField(max_length=40)
+    email = models.EmailField()
+    message = models.TextField()
+
+    def __str__(self) -> str:
+        return self.name

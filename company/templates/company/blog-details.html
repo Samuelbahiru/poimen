@@ -68,8 +68,6 @@
 
                 <div class="content">{{blog.content | safe}}</div>
                 <!-- End post content -->
-
-                
               </article>
               <!-- End blog post -->
 
@@ -114,7 +112,6 @@
                     <div>
                       <h5>
                         <a href="">{{comment.name}}</a>
-                       
                       </h5>
                       <time datetime="2020-01-01"
                         >{{comment.date | date:'F d, Y'}}</time
@@ -133,13 +130,13 @@
                     are marked *
                   </p>
                   <form action="" method="post">
-                    {% csrf_token %}
+                    {% csrf_token %}          
                     <div class="row">
                       <div class="col-md-6 form-group">
                         <input
                           name="name"
                           type="text"
-                          class="form-control"
+                          class="form-control {% if form.name.errors %} is-invalid {% endif %} "
                           placeholder="Your Name*"
                           id="id_name"
                         />
@@ -148,18 +145,19 @@
                         <input
                           name="email"
                           type="text"
-                          class="form-control"
+                          class="form-control{% if form.email.errors %} is-invalid {% endif %} "
                           placeholder="Your Email*"
                           id="id_email"
                         />
                       </div>
                     </div>
+
                     <div class="row">
                       <div class="col form-group">
                         <input
                           name="website"
                           type="text"
-                          class="form-control"
+                          class="form-control {% if form.website.errors %} is-invalid {% endif %} "
                           placeholder="Your Website"
                           id="id_website"
                         />
@@ -169,7 +167,7 @@
                       <div class="col form-group">
                         <textarea
                           name="comment"
-                          class="form-control"
+                          class="form-control {% if form.comment.errors %} is-invalid {% endif %} "
                           placeholder="Your Comment*"
                           id="id_comment"
                         ></textarea>
@@ -179,6 +177,7 @@
                       Post Comment
                     </button>
                   </form>
+
                 </div>
               </div>
               <!-- End blog comments -->
@@ -186,7 +185,6 @@
 
             <div class="col-lg-4">
               <div class="sidebar">
-               
                 <!-- End sidebar search formn-->
 
                 <div class="sidebar-item categories">
@@ -228,7 +226,6 @@
                 </div>
                 <!-- End sidebar recent posts-->
 
-    
                 <!-- End sidebar tags-->
               </div>
               <!-- End Blog Sidebar -->

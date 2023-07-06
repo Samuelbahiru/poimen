@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from . import models
+from . import forms
 from django.core.paginator import Paginator
+from django.core.mail import send_mail
 # Create your views here.
 def homepage(request):
     recent_blog = models.Blog.objects.all()[:3]
@@ -59,73 +61,51 @@ def resource(request):
     return render(request, 'company/resource.html', context)
 
 def resource_detail(request, slug):
-    resource_detail = models.Resource.objects.filter(slug = slug).first()
-
-    comment = models.Resource_Comment.objects.filter(status = True, post__id = resource_detail.id)
+    resource_detail = models.Resource.objects.get(slug = slug)
+    comment = models.Resource_Comment.objects.filter(post__pk = resource_detail.pk, status = True)
     
+    form = forms.ResourceComment()
     context = {
         'resource' : resource_detail,
-        'comments' : comment
+        'comment' : comment,
+        'form' : form
     }
-
-    if request.method == "POST":
-      
-      name = request.POST.get('name')
-      email = request.POST.get('email')
-      website = request.POST.get('website')
-      comment = request.POST.get('comment')
-    
-      
-      obj = models.Resource_Comment()
-      obj.name = name
-      obj.email = email
-      obj.website = website
-      obj.comment = comment
-      obj.post = resource_detail
-      obj.status = True
-      obj.save()
-
-      return render(request, 'company/resource-details.html', context)
-
-    
+    if request.method == 'POST':
+        form = forms.ResourceComment(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = resource_detail
+            comment.save()
+            return render(request, 'company/resource-details.html', context)
 
     return render(request, 'company/resource-details.html', context)
+
+
 
 def blog_detail(request, slug):
 
     blog_detail = models.Blog.objects.filter(slug = slug).first()
     recent_blogs = models.Blog.objects.all()[:5]
-    
     comment = models.Blog_Comment.objects.filter(status = True, post__id = blog_detail.id)
+
+    form = forms.BlogComment()
 
     context = {
         'blog' : blog_detail,
         'categories' : models.Blog_Categories.objects.all(),
         'recent_blogs' : recent_blogs,
         'comments' : comment,
+        'form' : form
     }
-
-
-    if request.method == "POST":
-      
-      name = request.POST.get('name')
-      email = request.POST.get('email')
-      website = request.POST.get('website')
-      comment = request.POST.get('comment')
-      
-      obj = models.Blog_Comment()
-      obj.name = name
-      obj.email = email
-      obj.website = website
-      obj.comment = comment
-      obj.post = blog_detail
-      obj.status = True
-      obj.save()
-
-      return render(request, 'company/blog-details.html', context)
-
-
-
+    if request.method == 'POST':
+        form = forms.BlogComment(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = blog_detail
+            comment.save()
+            form = forms.BlogComment()     
+            return render(request, 'company/blog-details.html', context)
+    
     return render(request, 'company/blog-details.html', context)
 
 def send_email(request):
