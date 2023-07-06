@@ -35,6 +35,7 @@ class Blog(models.Model):
     type = models.ManyToManyField(Blog_Categories)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    subscription_status = models.BooleanField(default=False)
 
     class Meta:
       ordering = ['-created_at', '-updated_at']
@@ -63,8 +64,9 @@ class Blog(models.Model):
        msg.send()
        return True
      
-     send_email_fun = map(send_email_each, all_email) 
-     print(list(send_email_fun)) 
+     if(self.subscription_status == True):
+       send_email_fun = map(send_email_each, all_email) 
+     
 
     def __str__(self) -> str:
         return self.title
