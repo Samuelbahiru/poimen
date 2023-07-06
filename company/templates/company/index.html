@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-  {% fontawesome_5_static %} 
+  {% fontawesome_5_static %}
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -13,12 +13,12 @@
   <meta content="" name="keywords">
 
   {% include 'company/include/head.html' %}
- 
+
 </head>
 
 <body>
 
-    {% include 'company/include/navbar.html' %}
+  {% include 'company/include/navbar.html' %}
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
 
@@ -36,11 +36,16 @@
 
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
-      <div class="carousel-item active" style="background-image: url({% static 'assets/img/hero-carousel/carsu1.jpg' %})"></div>
-      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu2.jpg' %})"></div>
-      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu3.jpg' %})"></div>
-      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu4.jpg' %})"></div>
-      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu5.jpg' %})"></div>
+      <div class="carousel-item active"
+        style="background-image: url({% static 'assets/img/hero-carousel/carsu1.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu2.jpg' %})">
+      </div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu3.jpg' %})">
+      </div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu4.jpg' %})">
+      </div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/carsu5.jpg' %})">
+      </div>
 
       <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
@@ -64,42 +69,41 @@
 
           <div class="col-lg-4 d-flex align-items-center" data-aos="fade-up">
             <div class="content">
-              <h5> "In the same way, let your 
-                light shine before others, that 
-                they may see your good 
-                deeds and glorify your Father 
+              <h5> "In the same way, let your
+                light shine before others, that
+                they may see your good
+                deeds and glorify your Father
                 in heaven” (Matthew 5:16)" </h5>
             </div>
           </div>
 
-          <div class="col-lg-6 shadow-lg" data-aos="fade" >
-            <form action="forms/quote.php" method="post" class="php-email-form">
-              <h3 class="text-warning">Get a Subscription</h3>
+          <div class="col-lg-6 shadow-lg card border-0 bg-light" data-aos="fade">
+
+            <div class="card-body">
+
+              <h3 class="text-warning">GET A SUBSCRIPTION</h3>
               <p>...</p>
-              <div class="row gy-3">
 
-                <div class="col-md-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required>
+              <form action="" method="POST">
+                  {% csrf_token %}
+
+                <div class="mb-3">
+                  <input type="text" name="name" class="form-control" placeholder="Name">
+                </div>
+                <div class="mb-3">
+                  <input type="email" name="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" name="message" cols="25" rows="10" placeholder="Message"></textarea>
                 </div>
 
-                <div class="col-md-12 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="submit">Subscribe</button>
                 </div>
+              </form>
 
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                </div>
+            </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your subscription request has been sent successfully. Thank you!</div>
-
-                  <button type="submit" class="btn btn-outline">Subscribe</button>
-                </div>
-
-              </div>
-            </form>
           </div><!-- End Quote Form -->
 
         </div>
@@ -107,8 +111,8 @@
       </div>
     </section><!-- End Get Started Section -->
 
-     
-    </section> 
+
+    </section>
     <!--About us section -->
     <section id="about" class="about" style="margin-top: -75px;">
       <div class="container" data-aos="fade-up">
@@ -116,70 +120,70 @@
           <h3 style="margin-bottom: 0px;" class="text-warning fw-bold">About Us</h3>
           <div class="col-lg-6 my-3">
             <h4>History of Poimen Ministry</h4>
-            <hr class="text-primary fw-bold h2 py-2 mb-2"/>
+            <hr class="text-primary fw-bold h2 py-2 mb-2" />
             <p>
-              God wants all people to hear 
-              the good news of Jesus Christ 
-              and receive eternal salvation. 
-              To hear the gospel, people 
-              need to have access to the 
-              sound teachings of God’s 
-              Word. 
-              </p>
-              <p style="text-align: justify;" >
-              We believe that the Church 
-              has the primary responsibility 
-              for teaching the gospel of Jesus Christ to people. However, the Church needs support 
-              to preach and teach the Gospel to believers and reach out 
-              to unreached people. 
-              Poimen Ministry was established to support the preaching and teaching of the true 
-              Gospel of Jesus Christ. 
-              Poimen Ministry is a Christian 
-              organization registered by the 
-              Ethiopian Gospel Believers’ 
-              Churches Council and has a 
-              legal license to do ministry. 
-              Poimen Ministry is governed 
-              by seasoned and devoted 
-              board of directors. 
+              God wants all people to hear
+              the good news of Jesus Christ
+              and receive eternal salvation.
+              To hear the gospel, people
+              need to have access to the
+              sound teachings of God’s
+              Word.
+            </p>
+            <p style="text-align: justify;">
+              We believe that the Church
+              has the primary responsibility
+              for teaching the gospel of Jesus Christ to people. However, the Church needs support
+              to preach and teach the Gospel to believers and reach out
+              to unreached people.
+              Poimen Ministry was established to support the preaching and teaching of the true
+              Gospel of Jesus Christ.
+              Poimen Ministry is a Christian
+              organization registered by the
+              Ethiopian Gospel Believers’
+              Churches Council and has a
+              legal license to do ministry.
+              Poimen Ministry is governed
+              by seasoned and devoted
+              board of directors.
             </p>
             <a href="{% url 'about'  %}"><button class="btn btn-outline-warning"> Read More</button></a>
-           
+
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <h4>Vision, Mission and Core Values</h4>
-            <hr class="text-primary fw-bold h2 py-2 my-2"  />
+            <hr class="text-primary fw-bold h2 py-2 my-2" />
             <div class="row">
-              
-                <h5 class=" text-warning">Mission</h5>
-                <p> Poimen Ministry exists to provide 
-                  Bible-based teaching, counseling 
-                  and holistic support to Christ’s followers to be fruitful in their lives.
-                  </p>
-              
-             </div>
-             <div class="row" >
-                <h5  class="text-warning ">Vision</h5>
-                <p>To see believers, Christian families 
-                  and Church ministers built on the 
-                  Word of God, live godly life and 
-                  bring people to Christ and help 
-                  them grow in Christian faith. 
-                  </p>
+
+              <h5 class=" text-warning">Mission</h5>
+              <p> Poimen Ministry exists to provide
+                Bible-based teaching, counseling
+                and holistic support to Christ’s followers to be fruitful in their lives.
+              </p>
+
             </div>
             <div class="row">
-                  <h5  class="text-warning">Core Values </h5>
-                  <p>The Ministry abides by the following core values</p>
-          
-            <ul style="margin-left: 50px;">
-              <li > Integrity </li>
-              <li> Stewardship</li>
-              <li> Transparency</li>
-              <li> Partnership </li>
-            </ul>
+              <h5 class="text-warning ">Vision</h5>
+              <p>To see believers, Christian families
+                and Church ministers built on the
+                Word of God, live godly life and
+                bring people to Christ and help
+                them grow in Christian faith.
+              </p>
             </div>
-           
-           
+            <div class="row">
+              <h5 class="text-warning">Core Values </h5>
+              <p>The Ministry abides by the following core values</p>
+
+              <ul style="margin-left: 50px;">
+                <li> Integrity </li>
+                <li> Stewardship</li>
+                <li> Transparency</li>
+                <li> Partnership </li>
+              </ul>
+            </div>
+
+
           </div>
         </div>
 
@@ -191,79 +195,82 @@
     <section id="recent-blog-posts" class="recent-blog-posts">
       <div class="container" data-aos="fade-up">
 
-    
-    
-  <div style="margin-top: -80px;" class=" section-header">
-        <h2>Recent News Posts</h2>
-        <!-- <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p> -->
-      </div>
 
-      <div class="row gy-5">
-        
-       {% for blog in recent_blog%} 
-        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="post-item position-relative h-100">
 
-            <div class="post-img position-relative overflow-hidden">
-              <img src="/media/{{blog.image}}" class="img-fluid" alt="">
-              <span class="post-date">{{blog.created_at | timesince  }} ago</span>
-            </div>
+        <div style="margin-top: -80px;" class=" section-header">
+          <h2>Recent News Posts</h2>
+          <!-- <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p> -->
+        </div>
 
-            <div class="post-content d-flex flex-column">
+        <div class="row gy-5">
 
-              <h3 class="post-title text-dark h5">{{blog.title}}</h3>
+          {% for blog in recent_blog%}
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="post-item position-relative h-100">
 
-              <div class="meta d-flex align-items-center">
-                <!-- <div class="d-flex align-items-center">
-                  <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
-                </div> -->
-                <br>
-               
-                <button class="btn btn-outline-info my-3" > <a href="{% url 'blog_detail' blog.slug %}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-                </button>
+              <div class="post-img position-relative overflow-hidden">
+                <img src="/media/{{blog.image}}" class="img-fluid" alt="">
+                <span class="post-date">{{blog.created_at | timesince }} ago</span>
               </div>
 
+              <div class="post-content d-flex flex-column">
 
-             
+                <h3 class="post-title text-dark h5">{{blog.title}}</h3>
 
-             
+                <div class="meta d-flex align-items-center">
+                  <!-- <div class="d-flex align-items-center">
+                  <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
+                </div> -->
+                  <br>
+
+                  <button class="btn btn-outline-info my-3"> <a href="{% url 'blog_detail' blog.slug %}"
+                      class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                  </button>
+                </div>
+
+
+
+
+
+              </div>
+
             </div>
+          </div><!-- End post item -->
+          {% endfor %}
 
-          </div>
-        </div><!-- End post item -->
-       {% endfor %}
-
-      </div>
+        </div>
 
       </div>
     </section>
 
-      <!-- Resources Section -->
+    <!-- Resources Section -->
     <section style="margin-top: -70px;" id="services" class="services section-bg">
       <div class="container" data-aoss="fade-up">
 
         <div class="section-header">
           <h2>Resources</h2>
-          
+
         </div>
 
         <div class="row gy-4">
-        {% if resources %}
+          {% if resources %}
           {% for resource in resources %}
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item  position-relative">
               <div class="icon">
-               <i class="mx-4 text-light ">{{resource.icon.as_html}}</i> 
-               
+                <i class="mx-4 text-light ">{{resource.icon.as_html}}</i>
+
               </div>
               <h3>{{resource.title}}</h3>
               <p>{{resource.short_description}}</p>
-              <a href="{% url 'resource_detail' resource.slug %}" class="me-3"> <button class="btn btn-outline-info my-2">Read More</button></a>
-              <a href="{{resource.document_link}}" class="readmore "> <button class="btn btn-outline-primary">Download <i class="bi bi-arrow-down"></i></button></a>
-            </div>  
+              <a href="{% url 'resource_detail' resource.slug %}" class="me-3"> <button
+                  class="btn btn-outline-info my-2">Read More</button></a>
+              <a href="{{resource.document_link}}" class="readmore "> <button class="btn btn-outline-primary">Download
+                  <i class="bi bi-arrow-down"></i></button></a>
+            </div>
           </div><!-- End Service Item -->
-         {% endfor %}
-        {% endif %}
+          {% endfor %}
+          {% endif %}
         </div>
 
       </div>
@@ -271,12 +278,13 @@
 
   </main><!-- End #main -->
 
-   {% include 'company/include/footer.html'%}
-   
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  {% include 'company/include/footer.html'%}
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
-   {% include 'company/include/vendor.html'%}
+  {% include 'company/include/vendor.html'%}
 
 </body>
 

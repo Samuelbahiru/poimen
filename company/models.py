@@ -4,7 +4,11 @@ from django.utils.text import slugify
 from unidecode import unidecode
 from fontawesome_5.fields import IconField
 from django.contrib.auth.models import User
-
+from django.core.mail import send_mail
+from django.db import models
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+from django.core.mail import EmailMultiAlternatives
 
 
 #Blog Model
@@ -42,9 +46,32 @@ class Blog(models.Model):
 
     def count_comment(self):
       return Blog_Comment.objects.filter(post__id = self.pk, status = True).count()
+    
+    def send_email(self):
+     subscribers = Subscription.objects.values_list('email')
+     emails = list(subscribers)
+     all_email = [x for tup in emails for x in tup]
+
+     def send_email_each(email):
+       subject = self.title
+       from_email = '@gmail.com'
+       to_email = email
+       text_content = '<!DOCTYPE html>'
+       html_content = self.content
+       msg = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
+       msg.attach_alternative(html_content, "text/html")
+       msg.send()
+       return True
+     
+     send_email_fun = map(send_email_each, all_email) 
+     print(list(send_email_fun)) 
 
     def __str__(self) -> str:
         return self.title
+
+@receiver(pre_save, sender=Blog)
+def call_my_function(sender, instance, **kwargs):
+    instance.send_email()
     
 class Blog_Comment(models.Model):
    name = models.CharField(max_length=200)
@@ -145,7 +172,7 @@ class Gallery(models.Model):
 class Subscription(models.Model):
     name = models.CharField(max_length=40)
     email = models.EmailField()
-    message = models.TextField()
+    message = models.TextField(blank=True, null=True)
 
     def __str__(self) -> str:
         return self.name

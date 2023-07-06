@@ -20,3 +20,13 @@ class BlogComment(forms.ModelForm):
     class Meta:
         model = models.Blog_Comment
         fields = ("name","email", "website", "comment")
+
+class SubscriptionForm(forms.ModelForm):
+    name = forms.CharField(max_length=100, required=True, error_messages={'required': 'Title can not be empty'})
+    email = forms.EmailField(required=True, error_messages={'required': 'Email can not be empty'})
+    message = forms.CharField(widget=forms.Textarea())
+
+    class Meta:
+        model = models.Subscription
+        fields = '__all__'
+    

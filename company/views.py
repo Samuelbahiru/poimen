@@ -8,6 +8,15 @@ def homepage(request):
     recent_blog = models.Blog.objects.all()[:3]
     resource = models.Resource.objects.all()[:6]
 
+    if request.method == 'POST':
+        form = forms.SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = forms.SubscriptionForm()
+    else:
+        form = forms.SubscriptionForm()
+
+    
     context = {
         'recent_blog' : recent_blog,
         'resources' : resource
@@ -18,7 +27,15 @@ def about(request):
     return render(request, 'company/about.html')
 
 def contact(request):
-    return render(request, 'company/contact.html')
+     send_mail(
+    "Django",
+    "Test From Django Project.",
+    "mikiyasmebrate2656@gmail.com",
+    ["xegol63758@msback.com"],
+    fail_silently=False,
+)
+
+     return render(request, 'company/contact.html')
 
 def gallery(request):
     all_gallery = models.Gallery.objects.all()
