@@ -28,7 +28,9 @@ SECRET_KEY = 'django-insecure-&s((vfi9*2(j9+(e5z^mcwssqjt(w!)^l5p1&h$n0)%=p6es(m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'http://poimenministry.org/', '64.227.113.126'
+]
 
 
 
