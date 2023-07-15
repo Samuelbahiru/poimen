@@ -11,4 +11,5 @@ urlpatterns = [
     path('resource/<slug:slug>/', views.resource_detail, name='resource_detail'),
     path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
     path('send-email/', views.send_email, name='send_email'),
+    path('donate/', views.donate, name="donate")
 ]

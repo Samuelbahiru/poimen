@@ -21,7 +21,9 @@
           <li><a href="{% url 'service'%}" class="{% if request.path == '/services/' %}active{% endif %}">Training Services</a></li>
           <li><a href="{% url 'gallery' %}" class="{% if request.path == '/gallery/' %}active{% endif %}">Gallery</a></li>
           <li><a href="{% url 'resource' %}" class="{% if request.path == '/resource/' %}active{% endif %}">Resources</a></li>
-          <li><a href="{% url 'contact'%}" class="{% if request.path == '/contact/' %}active{% endif %} p-2 btn btn-outline-info">Contact</a></li>
+          <li><a href="{% url 'contact'%}" class="{% if request.path == '/contact/' %}active{% endif %} p-2 ">Contact</a></li>
+          <li><a href="{% url 'donate' %}" class="{% if request.path == '/resource/' %}active{% endif %} text-warning">Donate</a></li>
+
         </ul>
       </nav>
       <!-- .navbar -->

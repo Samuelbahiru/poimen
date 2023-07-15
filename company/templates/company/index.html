@@ -28,7 +28,7 @@
           <div class="col-lg-6 text-center">
             <h2 data-aos="fade-down">Welcome to <span>Poimen Ministry</span></h2>
             <p data-aos="fade-up">To equip God's people for the works of service.</p>
-            <a data-aos="fade-up" data-aos-delay="200" href="#main" class="btn-get-started ">Read More</a>
+          <a href="{% url 'about'%}" class="{% if request.path == '/about/' %}active{% endif %} btn btn-outline-info px-4 rounded-5" data-aos="fade-up" data-aos-delay="200" >Read More</a>
           </div>
         </div>
       </div>
@@ -117,10 +117,11 @@
     <section id="about" class="about" style="margin-top: -75px;">
       <div class="container" data-aos="fade-up">
         <div class="row content">
-          <h3 style="margin-bottom: 0px;" class="text-warning fw-bold">About Us</h3>
+        
+          <h3 style="margin-bottom: 0px; " class="text-warning fw-bold  my-2 ">About Us</h3>
           <div class="col-lg-6 my-3">
             <h4>History of Poimen Ministry</h4>
-            <hr class="text-primary fw-bold h2 py-2 mb-2" />
+            <hr class="text-primary fw-bold h2 py-2 my-2" />
             <p>
               God wants all people to hear
               the good news of Jesus Christ
@@ -150,8 +151,8 @@
             <a href="{% url 'about'  %}"><button class="btn btn-outline-warning"> Read More</button></a>
 
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <h4>Vision, Mission and Core Values</h4>
+          <div  class="col-lg-6 pt-4 pt-lg-0 ">
+            <h4 style="margin-top: 10px; " class="my-3">Vision, Mission and Core Values</h4>
             <hr class="text-primary fw-bold h2 py-2 my-2" />
             <div class="row">
 
@@ -175,12 +176,12 @@
               <h5 class="text-warning">Core Values </h5>
               <p>The Ministry abides by the following core values</p>
 
-              <ul style="margin-left: 50px;">
+              <dl style="margin-left: 50px;">
                 <li> Integrity </li>
                 <li> Stewardship</li>
                 <li> Transparency</li>
                 <li> Partnership </li>
-              </ul>
+              </dl>
             </div>
 
 

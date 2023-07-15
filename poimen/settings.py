@@ -29,14 +29,14 @@ SECRET_KEY = 'django-insecure-&s((vfi9*2(j9+(e5z^mcwssqjt(w!)^l5p1&h$n0)%=p6es(m
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'http://poimenministry.org/', '64.227.113.126'
+    "poimenministry.org", "64.227.113.126"
 ]
 
 
 
 
 INSTALLED_APPS = [
-     'corsheaders',
+    'corsheaders',
     'admin_interface',
     'colorfield',
     'django.contrib.admin',
@@ -151,7 +151,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # settings.py
 CORS_ORIGIN_ALLOW_ALL = True
-# ...
+CSRF_TRUSTED_ORIGINS = ['https://poimenministry.org/']
+
+
 # CORS_ORIGIN_WHITELIST = [
 #     "https://poimenministry.org/" # Add specific origins that are allowed
 # ]
@@ -160,10 +162,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587  
-EMAIL_HOST_USER = 'Your Email'  
-EMAIL_HOST_PASSWORD = 'Your Password '  
+EMAIL_HOST_USER = 'poimenkb@gmail.com'  
+EMAIL_HOST_PASSWORD = 'rhwnogylpdfgooin'  
 EMAIL_USE_TLS = True 
-# DEFAULT_FROM_EMAIL = 'samuelbahiru93@gmail.com'
+DEFAULT_FROM_EMAIL = 'poimenkb@gmail.com'
 
 # ...
 
