@@ -26,6 +26,8 @@ def homepage(request):
 def about(request):
     return render(request, 'company/about.html')
 
+def donate(request):
+    return render(request, 'company/donate.html')
 def contact(request):
      send_mail(
     "Django",
