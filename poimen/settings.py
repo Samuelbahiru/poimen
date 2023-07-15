@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-&s((vfi9*2(j9+(e5z^mcwssqjt(w!)^l5p1&h$n0)%=p6es(m
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "poimenministry.org", "64.227.113.126"
+    "*"
 ]
 
 
@@ -152,6 +152,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # settings.py
 CORS_ORIGIN_ALLOW_ALL = True
 CSRF_TRUSTED_ORIGINS = ['https://poimenministry.org/']
+
 
 
 # CORS_ORIGIN_WHITELIST = [
