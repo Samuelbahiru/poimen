@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
+     'corsheaders',
     'admin_interface',
     'colorfield',
     'django.contrib.admin',
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -146,8 +148,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ...
 
 # settings.py
-
+CORS_ORIGIN_ALLOW_ALL = True
 # ...
+# CORS_ORIGIN_WHITELIST = [
+#     "https://poimenministry.org/" # Add specific origins that are allowed
+# ]
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
