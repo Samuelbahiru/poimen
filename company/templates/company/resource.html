@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Poimen - Blog</title>
+  <title>Poimen - Resource</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   {% include 'company/include/head.html'%}
@@ -55,9 +55,9 @@
                   <div class="d-flex align-items-center">
                     <i class="bi bi-person"></i> <span class="ps-2">{{resource.user}}</span>
                   </div>
-                  <span class="px-3 text-black-50">/</span>
+                 
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
+                    
                   </div>
                 </div>
 
@@ -68,6 +68,8 @@
                 <hr>
 
                 <a href="{% url 'resource_detail' resource.slug %}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                
 
               </div>
 
