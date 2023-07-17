@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>UpConstruction Bootstrap Template - Blog Details</title>
+    <title>Poimen - Resource Details</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -42,7 +42,7 @@
             <div class="col-lg-10">
               <article class="blog-details">
                 <div class="post-img">
-                  <img src="/media/{{resource.image}}" alt="" class="img-fluid" />
+                  <img src="{{resource.image}}" alt="" class="img-fluid" />
                 </div>
 
                 <!-- start meta top-->
@@ -77,23 +77,14 @@
               <!--author start here -->
               <div class="post-author d-flex align-items-center">
                 <img
-                  src="/media/{{author.image}}"
+                  src="{{resource.author_image}}"
                   class="rounded-circle flex-shrink-0"
                   alt=""
+                  style="width: 60px; height: 60px;"
                 />
                 <div>
                   <h4>{{resource.user}}</h4>
-                  <div class="social-links">
-                    <a href="https://twitters.com/#"
-                      ><i class="bi bi-twitter"></i
-                    ></a>
-                    <a href="https://facebook.com/#"
-                      ><i class="bi bi-facebook"></i
-                    ></a>
-                    <a href="https://instagram.com/#"
-                      ><i class="biu bi-instagram"></i
-                    ></a>
-                  </div>
+                  
                   <p>
                     {{resource.author_description}}
                   </p>

@@ -26,15 +26,9 @@ def homepage(request):
 def about(request):
     return render(request, 'company/about.html')
 
+def donate(request):
+    return render(request, 'company/donate.html')
 def contact(request):
-     send_mail(
-    "Django",
-    "Test From Django Project.",
-    "mikiyasmebrate2656@gmail.com",
-    ["xegol63758@msback.com"],
-    fail_silently=False,
-)
-
      return render(request, 'company/contact.html')
 
 def gallery(request):
