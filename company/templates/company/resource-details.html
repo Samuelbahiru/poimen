@@ -46,7 +46,7 @@
                 </div>
 
                 <!-- start meta top-->
-                <h2 class="title text-center ">{{resource.title}}</h2>
+                <h2 class="title text-center">{{resource.title}}</h2>
 
                 <div class="meta-top">
                   <ul>
@@ -68,11 +68,20 @@
                 <!-- End meta top -->
 
                 <!--start the content-->
-                <div class="content">{{resource.content | safe}}</div>
-                <!-- End post content -->
+                <div class="content">
+                  {{resource.content | safe}}
+                  <a
+                    href="{{resource.document_link}}"
+                    class="readmore float-end"
+                  >
+                    <button class="btn btn-outline-primary">
+                      Download <i class="bi bi-arrow-down"></i></button
+                  ></a>
+                  <br />
+                </div>
 
+                <!-- End post content -->
               </article>
-           
 
               <!--author start here -->
               <div class="post-author d-flex align-items-center">
@@ -80,21 +89,21 @@
                   src="{{resource.author_image}}"
                   class="rounded-circle flex-shrink-0"
                   alt=""
-                  style="width: 60px; height: 60px;"
+                  style="width: 60px; height: 60px"
                 />
                 <div>
                   <h4>{{resource.user}}</h4>
-                  
-                  <p>
-                    {{resource.author_description}}
-                  </p>
+
+                  <p>{{resource.author_description}}</p>
                 </div>
               </div>
               <!-- End post author -->
 
-          <!--this is a comments (but not working)-->
+              <!--this is a comments (but not working)-->
               <div class="comments">
-                <h4 class="comments-count">{{resource.count_comment}} Comments</h4>
+                <h4 class="comments-count">
+                  {{resource.count_comment}} Comments
+                </h4>
 
                 {% for cm in comment %}
                 <div id="comment-1" class="comment">
@@ -121,7 +130,7 @@
                 </div>
                 <!-- End comment #1 -->
                 {% endfor %}
-<!--comment forms-->
+                <!--comment forms-->
                 <div class="reply-form">
                   <h4>Leave a Reply</h4>
                   <p>
@@ -129,13 +138,13 @@
                     are marked *
                   </p>
                   <form action="" method="post">
-                    {% csrf_token %}          
+                    {% csrf_token %}
                     <div class="row">
                       <div class="col-md-6 form-group">
                         <input
                           name="name"
                           type="text"
-                          class="form-control {% if form.name.errors %} is-invalid {% endif %} "
+                          class="form-control {% if form.name.errors %} is-invalid {% endif %}"
                           placeholder="Your Name*"
                           id="id_name"
                         />
@@ -144,7 +153,7 @@
                         <input
                           name="email"
                           type="text"
-                          class="form-control{% if form.email.errors %} is-invalid {% endif %} "
+                          class="form-control{% if form.email.errors %} is-invalid {% endif %}"
                           placeholder="Your Email*"
                           id="id_email"
                         />
@@ -156,7 +165,7 @@
                         <input
                           name="website"
                           type="text"
-                          class="form-control {% if form.website.errors %} is-invalid {% endif %} "
+                          class="form-control {% if form.website.errors %} is-invalid {% endif %}"
                           placeholder="Your Website"
                           id="id_website"
                         />
@@ -166,7 +175,7 @@
                       <div class="col form-group">
                         <textarea
                           name="comment"
-                          class="form-control {% if form.comment.errors %} is-invalid {% endif %} "
+                          class="form-control {% if form.comment.errors %} is-invalid {% endif %}"
                           placeholder="Your Comment*"
                           id="id_comment"
                         ></textarea>
@@ -178,10 +187,8 @@
                   </form>
                 </div>
               </div>
-  <!-- End comment forms -->
+              <!-- End comment forms -->
             </div>
-
-           
           </div>
         </div>
       </section>
