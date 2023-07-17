@@ -42,7 +42,7 @@
             <div class="col-lg-10">
               <article class="blog-details">
                 <div class="post-img">
-                  <img src="/media/{{resource.image}}" alt="" class="img-fluid" />
+                  <img src="{{resource.image}}" alt="" class="img-fluid" />
                 </div>
 
                 <!-- start meta top-->
@@ -77,9 +77,10 @@
               <!--author start here -->
               <div class="post-author d-flex align-items-center">
                 <img
-                  src="/media/{{author.image}}"
+                  src="{{resource.author_image}}"
                   class="rounded-circle flex-shrink-0"
                   alt=""
+                  style="width: 60px; height: 60px;"
                 />
                 <div>
                   <h4>{{resource.user}}</h4>

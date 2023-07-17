@@ -29,7 +29,7 @@ class Blog_Categories(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='blog/image/')
+    image = models.URLField()
     content = FroalaField()
     slug = models.SlugField(max_length=300, unique=True,blank=True)
     type = models.ManyToManyField(Blog_Categories)
@@ -91,14 +91,15 @@ class Blog_Comment(models.Model):
 #Resource Model
 class Resource(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    author_image = models.ImageField(upload_to='author/image/')
+    author_image = models.URLField()
     author_description = models.TextField(null=True, blank=True)
     title = models.CharField(max_length=200)
     icon = IconField()
-    image = models.ImageField(upload_to='blog/image/')
+    image = models.URLField()
     short_description = models.CharField(max_length=200)
     document_link = models.URLField(max_length=200)
     content = FroalaField()
+    subscription_status = models.BooleanField(default=False)
     slug = models.SlugField(max_length=300, unique=True,blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -116,6 +117,33 @@ class Resource(models.Model):
 
     def __str__(self) -> str:
         return self.title
+    def send_email(self):
+     subscribers = Subscription.objects.values_list('email')
+     emails = list(subscribers)
+     all_email = [x for tup in emails for x in tup]
+
+     def send_email_each(email):
+       subject = self.title
+       from_email = '@gmail.com'
+       to_email = email
+       text_content = '<!DOCTYPE html>'
+       html_content = self.content
+       msg = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
+       msg.attach_alternative(html_content, "text/html")
+       msg.send()
+       return True
+     
+     if(self.subscription_status == True):
+       send_email_fun = map(send_email_each, all_email) 
+     
+    def __str__(self) -> str:
+        return self.title
+
+
+@receiver(pre_save, sender=Resource)
+def call_my_function(sender, instance, **kwargs):
+    instance.send_email()
+
 
 class Resource_Comment(models.Model):
    name = models.CharField(max_length=200)
@@ -133,7 +161,7 @@ class Resource_Comment(models.Model):
 #Service 
 class Service(models.Model):
     icon = IconField()
-    image = models.ImageField(upload_to='company/service/')
+    image = models.URLField()
     title = models.CharField(max_length=50)
     short_description = models.CharField(max_length=300)
     content = FroalaField()
@@ -158,7 +186,7 @@ class Gallery_Categories(models.Model):
 class Gallery(models.Model):
     title = models.CharField(max_length=100)
     category = models.ForeignKey(Gallery_Categories,on_delete=models.CASCADE, null=True)
-    image = models.ImageField(upload_to='company/gallery')
+    image = models.URLField()
     slug = models.SlugField(max_length=100, unique=True,blank=True, null=True)
 
     def save(self, *args, **kwargs):
