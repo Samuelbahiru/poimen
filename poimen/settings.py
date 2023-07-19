@@ -151,7 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # settings.py
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_TRUSTED_ORIGINS = ['https://poimenministry.org/']
+CSRF_TRUSTED_ORIGINS = ['https://poimenministry.org']
 
 
 
