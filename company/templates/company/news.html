@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Poimen - Gallery</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    {% include 'company/include/head.html' %}
+  </head>
+
+  <body>
+    {% include 'company/include/navbar.html'%}
+    <main id="main">
+      <!-- ======= Breadcrumbs ======= -->
+      <div
+        class="breadcrumbs d-flex align-items-center"
+        style="
+          background-image: url('{% static 'assets/img/breadcrumbs-bg.jpg' %}');
+        "
+      >
+        <div
+          class="container position-relative d-flex flex-column align-items-center"
+          data-aos="fade"
+        >
+          <h2>News</h2>
+          <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>News</li>
+          </ol>
+        </div>
+      </div>
+      <!-- End Breadcrumbs -->
+
+      <!-- ======= Our Projects Section ======= -->
+      <section id="projects" class="projects">
+        <div class="container" data-aos="fade-up">
+          <div
+            class="portfolio-isotope"
+            data-portfolio-filter="*"
+            data-portfolio-layout="masonry"
+            data-portfolio-sort="original-order"
+          >
+            <ul
+              class="portfolio-flters"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              {% if categories%}
+              <li data-filter="*" class="filter-active">All</li>
+              {% endif %} {% for categories in categories %}
+              <li data-filter=".filter-{{categories.name}}">
+                {{categories.name}}
+              </li>
+              {% endfor %}
+            </ul>
+            <!-- End Projects Filters -->
+
+            <div
+              class="row gy-4 portfolio-container"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              {% for blog in blogs%}
+              <div class="col-xl-4 col-md-6">
+                <div class="post-item position-relative h-100">
+                  <div class="post-img position-relative overflow-hidden">
+                    <img src="{{resource.image}}" class="img-fluid" alt="" />
+                    <span class="post-date"
+                      >{{blog.created_at | timesince}}</span
+                    >
+                  </div>
+
+                  <div class="post-content d-flex flex-column">
+                    <h3 class="post-title">{{blog.title}}</h3>
+
+                    <div class="meta d-flex align-items-center">
+                      <!-- <div class="d-flex align-items-center">
+                        <i class="bi bi-person"></i>
+                        <span class="ps-2">{{blog.user}}</span>
+                      </div> -->
+
+                      <div class="d-flex align-items-center"></div>
+                    </div>
+
+                    <p>{{blog.content}}</p>
+
+                    <hr />
+
+                    <div class="d-flex">
+                      <a
+                        href="{% url 'blog_detail' blog.slug %}"
+                        class="readmore mx-4"
+                        ><span>Read More</span><i class=""></i
+                      ></a>
+                      <!-- <a href="{{blog.document_link}}" class="readmore">
+                        <button class="btn btn-outline-primary">
+                          Download <i class="bi bi-arrow-down"></i></button
+                      ></a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End post list item -->
+              {% endfor %}
+            </div>
+            <!-- End Projects Container -->
+          </div>
+        </div>
+      </section>
+      <!-- End Our Projects Section -->
+    </main>
+    <!-- End #main -->
+
+    {% include 'company/include/footer.html'%}
+
+    <a
+      href="#"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <div id="preloader"></div>
+    {% include 'company/include/vendor.html'%}
+  </body>
+</html>

@@ -31,16 +31,16 @@ def donate(request):
 def contact(request):
      return render(request, 'company/contact.html')
 
-def gallery(request):
-    all_gallery = models.Gallery.objects.all()
-    gallery_categories = models.Gallery_Categories.objects.all()
-
+def news(request):
+   
+    blogs = models.Blog.objects.all()
     context = {
-        'all_gallery' : all_gallery,
-        'gallery_categories': gallery_categories
+        'blogs' : blogs,
+        'categories' : models.Blog_Categories.objects.all(),
     }
-
-    return render(request, 'company/gallery.html', context)
+   
+    
+    return render(request, 'company/news.html', context)
 
 
 def service(request):

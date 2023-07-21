@@ -1,59 +1,100 @@
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+  <div class="footer-content position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-info">
+            <h3>Poimen Ministry</h3>
+            <p>
+              Ethiopia, Addis Ababa <br />
 
-    <div class="footer-content position-relative">
-      <div class="container">
-        <div class="row">
+              <!-- <strong>Phone:</strong> +251 929522543<br /> -->
+              <strong>Email:</strong> poimenkb@gmail.com<br />
+            </p>
+            <div class="social-links d-flex mt-3">
+              <a
+                href="https://youtube.com/@kebedebekereofficial8793?feature=share9"
+                class="d-flex align-items-center justify-content-center"
+                ><i class="bi bi-youtube"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/Poimenministry"
+                class="d-flex align-items-center justify-content-center"
+                ><i class="bi bi-facebook"></i
+              ></a>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-info">
-              <h3>Poimen Ministry</h3>
-              <p>
-                Ethiopia, Addis Ababa <br>
-               
-                <strong>Phone:</strong> +251 929522543<br>
-                <strong>Email:</strong> poimenkb@gmail.com<br>
-              </p>
-              <div class="social-links d-flex mt-3">
-                <a href="https://youtube.com/@kebedebekereofficial8793?feature=share9" class="d-flex align-items-center justify-content-center"><i class="bi bi-youtube"></i></a>
-                <a href="https://facebook.com/groups/158388560943695/" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-               
-                <a href="https://t.me/poimenministry" class="d-flex align-items-center justify-content-center"><i class="bi bi-telegram"></i></a>
-              </div>
+              <a
+                href="https://t.me/poimenministry"
+                class="d-flex align-items-center justify-content-center"
+                ><i class="bi bi-telegram"></i
+              ></a>
             </div>
-          </div><!-- End footer info column-->
+          </div>
+        </div>
+        <!-- End footer info column-->
 
-          <div class="col-lg-2 col-md-3 footer-links" style="margin-left: 20px;">
-          
-            <ul>
-              <li><a href="{% url 'index'%}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
-              <li><a href="{% url 'about'%}" class="{% if request.path == '/about/' %}active{% endif %}" >About</a></li>
-              <li><a href="{% url 'service'%}" class="{% if request.path == '/services/' %}active{% endif %}">Training Services</a></li>
-              <li><a href="{% url 'gallery' %}" class="{% if request.path == '/gallery/' %}active{% endif %}">Gallery</a></li>
-              <li><a href="{% url 'resource' %}" class="{% if request.path == '/resource/' %}active{% endif %}">Resources</a></li>
-              <li><a href="{% url 'contact'%}" class="{% if request.path == '/contact/' %}active{% endif %} ">Contact</a></li>
-              <!-- <li><a href="#">Terms of service</a></li>
+        <div class="col-lg-2 col-md-3 footer-links" style="margin-left: 20px">
+          <ul>
+            <li>
+              <a
+                href="{% url 'index'%}"
+                class="{% if request.path == '/' %}active{% endif %}"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'about'%}"
+                class="{% if request.path == '/about/' %}active{% endif %}"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'service'%}"
+                class="{% if request.path == '/services/' %}active{% endif %}"
+                >Training Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'news' %}"
+                class="{% if request.path == '/news/' %}active{% endif %}"
+                >All news</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'resource' %}"
+                class="{% if request.path == '/resource/' %}active{% endif %}"
+                >Resources</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'contact'%}"
+                class="{% if request.path == '/contact/' %}active{% endif %}"
+                >Contact</a
+              >
+            </li>
+            <!-- <li><a href="#">Terms of service</a></li>
               <li><a href="#">Privacy policy</a></li> -->
-            </ul>
-          </div><!-- End footer links column-->
-
-   
+          </ul>
         </div>
-        
+        <!-- End footer links column-->
       </div>
     </div>
+  </div>
 
-    <div class="footer-legal text-center position-relative ">
-      <div class="container">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Poimen Ministry</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-        
-         
-        </div>
+  <div class="footer-legal text-center position-relative">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Poimen Ministry</span></strong
+        >. All Rights Reserved
       </div>
+      <div class="credits"></div>
     </div>
-
-  </footer>
-  <!-- End Footer -->
+  </div>
+</footer>
+<!-- End Footer -->

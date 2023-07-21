@@ -87,24 +87,38 @@
       <!-- End Blog Section -->
 
       <div class="blog-pagination">
-        <ul class="justify-content-center">
+        <ul
+          class="justify-content-center"
+          style="display: flex; gap: space-evenly; list-style: none"
+        >
           {% if page.has_previous %}
           <li>
-            <a href="?page={{ page.previous_page_number }}"
-              >{{ page.previous_page_number }}</a
-            >
+            <button class="btn btn-info">
+              <a href="?page={{ page.previous_page_number }}" class="text-light"
+                >{{ page.previous_page_number }}</a
+              >
+            </button>
           </li>
           {% endif %}
 
-          <span class="current-page">
-            <li class="active"><a href="#">{{ page.number }}</a></li>
+          <span class="current-page mx-2">
+            <button class="btn btn-dark text-light">
+              <li class="active" style="list-style: none">
+                <a href="#" class="text-light">{{ page.number }}</a>
+              </li>
+            </button>
           </span>
 
           {% if page.has_next %}
           <li>
-            <a href="?page={{ page.next_page_number }}"
-              >{{ page.next_page_number }}</a
-            >
+            <button class="btn btn-info text-light">
+              <a
+                href="?page={{ page.next_page_number }}"
+                style="list-style: none"
+                class="text-light"
+                >{{ page.next_page_number }}</a
+              >
+            </button>
           </li>
 
           {% endif %}

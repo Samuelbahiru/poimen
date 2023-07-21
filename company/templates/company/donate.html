@@ -1,68 +1,71 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Poimen - About</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
-  <title>Poimen - About</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-   
-  {% include 'company/include/head.html'%}
-  
-</head>
+    {% include 'company/include/head.html'%}
+  </head>
 
-<body>
-
-  {% include 'company/include/navbar.html'%}
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{% static 'assets/img/breadcrumbs-bg.jpg' %}');">
-      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
-
-        <h2 class="text-warning text-left">Donate</h2>
-        <ol>
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li>Donate</li>
-         
-        </ol>
-        <div class="card">
-          <div class="card-header text-center bg-info text-light">
-           Poimen Ministry
-          </div>
-          <div class="card-body">
-            <h5 class="card-title ">You can send your support to 
-              Poimen Ministry</h5>
-            <pre class="card-text">
+  <body>
+    {% include 'company/include/navbar.html'%}
+    <main id="main">
+      <!-- ======= Breadcrumbs ======= -->
+      <div
+        class="breadcrumbs d-flex align-items-center"
+        style="
+          background-image: url('{% static 'assets/img/breadcrumbs-bg.jpg' %}');
+        "
+      >
+        <div
+          class="container position-relative d-flex flex-column align-items-center"
+          data-aos="fade"
+        >
+          <h2 class="text-warning text-left">Donate</h2>
+          <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>Donate</li>
+          </ol>
+          <div class="card">
+            <div class="card-header text-center bg-info text-light">
+              Poimen Ministry
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                You can send your support to Poimen Ministry
+              </h5>
+              <pre class="card-text">
               Cooperative Bank of Oromia 
               Chaffe Arara Branch
               Account. No. 1033100043784
               Swift code: CBORETAA
-              Tel: 0929522543
+             
               Addis Ababa, Ethiopia
               </pre>
-            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
           </div>
         </div>
-
       </div>
-    </div><!-- End Breadcrumbs -->
+      <!-- End Breadcrumbs -->
+    </main>
+    <!-- End #main -->
 
-     
+    {% include 'company/include/footer.html'%}
 
-  
-  </main><!-- End #main -->
+    <a
+      href="#"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-   {% include 'company/include/footer.html'%}
+    <div id="preloader"></div>
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <div id="preloader"></div>
-
-   {% include 'company/include/vendor.html'%}
-</body>
-
+    {% include 'company/include/vendor.html'%}
+  </body>
 </html>
