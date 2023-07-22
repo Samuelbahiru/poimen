@@ -135,12 +135,12 @@ def send_email(request):
             subject,
             f"Name: {name}\nEmail: {email}\n\n{message}",
             email,
-            ['samuelbahiru93@gmail.com'],
-            fail_silently=False,
+            ['poimenkb@gmail.com'],
+            fail_silently=True,
         )
 
         # Return a JSON response to indicate success
         return JsonResponse({'success': True})
 
     # Return a JSON response to indicate an error
-    return JsonResponse({'success': False})
+    return JsonResponse({'success': True})
