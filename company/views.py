@@ -32,9 +32,13 @@ def contact(request):
      return render(request, 'company/contact.html')
 
 def news(request):
-   
+
     blogs = models.Blog.objects.all()
+    paginator = Paginator(blogs, 6)
+    page_number = request.GET.get('page')
+    page = paginator.get_page(page_number)
     context = {
+        'page' : page,
         'blogs' : blogs,
         'categories' : models.Blog_Categories.objects.all(),
     }

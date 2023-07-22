@@ -36,81 +36,96 @@
       <!-- End Breadcrumbs -->
 
       <!-- ======= Our Projects Section ======= -->
-      <section id="projects" class="projects">
+      <section id="recent-blog-posts" class="recent-blog-posts">
         <div class="container" data-aos="fade-up">
-          <div
-            class="portfolio-isotope"
-            data-portfolio-filter="*"
-            data-portfolio-layout="masonry"
-            data-portfolio-sort="original-order"
-          >
-            <ul
-              class="portfolio-flters"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              {% if categories%}
-              <li data-filter="*" class="filter-active">All</li>
-              {% endif %} {% for categories in categories %}
-              <li data-filter=".filter-{{categories.name}}">
-                {{categories.name}}
-              </li>
-              {% endfor %}
-            </ul>
-            <!-- End Projects Filters -->
-
-            <div
-              class="row gy-4 portfolio-container"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              {% for blog in blogs%}
-              <div class="col-xl-4 col-md-6">
-                <div class="post-item position-relative h-100">
-                  <div class="post-img position-relative overflow-hidden">
-                    <img src="{{resource.image}}" class="img-fluid" alt="" />
-                    <span class="post-date"
-                      >{{blog.created_at | timesince}}</span
-                    >
-                  </div>
-
-                  <div class="post-content d-flex flex-column">
-                    <h3 class="post-title">{{blog.title}}</h3>
-
-                    <div class="meta d-flex align-items-center">
-                      <!-- <div class="d-flex align-items-center">
-                        <i class="bi bi-person"></i>
-                        <span class="ps-2">{{blog.user}}</span>
-                      </div> -->
-
-                      <div class="d-flex align-items-center"></div>
-                    </div>
-
-                    <p>{{blog.content}}</p>
-
-                    <hr />
-
-                    <div class="d-flex">
-                      <a
-                        href="{% url 'blog_detail' blog.slug %}"
-                        class="readmore mx-4"
-                        ><span>Read More</span><i class=""></i
-                      ></a>
-                      <!-- <a href="{{blog.document_link}}" class="readmore">
-                        <button class="btn btn-outline-primary">
-                          Download <i class="bi bi-arrow-down"></i></button
-                      ></a> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End post list item -->
-              {% endfor %}
-            </div>
-            <!-- End Projects Container -->
+  
+  
+  
+          <div style="margin-top: -80px;" class=" section-header">
+            <!-- <h2>Recent News Posts</h2> -->
+            <!-- <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p> -->
           </div>
+         
+  
+          <div class="row gy-5 ">
+  
+            {% for blog in page%}
+            <div class="col-xl-4 col-md-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+              <div class="post-item position-relative h-100">
+  
+                <div class="post-img position-relative overflow-hidden">
+                  <img src="{{blog.image}}" class="img-fluid" alt="">
+                  <span class="post-date">{{blog.created_at | timesince }} ago</span>
+                </div>
+  
+                <div class="post-content d-flex flex-column">
+  
+                  <h3 class="post-title text-dark h5">{{blog.title}}</h3>
+  
+                  <div class="meta d-flex align-items-center">
+                    <!-- <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
+                  </div> -->
+                    <br>
+  
+                    <button class="btn btn-outline-info my-3"> <a href="{% url 'blog_detail' blog.slug %}"
+                        class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                    </button>
+                  </div>
+  
+  
+  
+  
+  
+                </div>
+  
+              </div>
+            </div><!-- End post item -->
+            {% endfor %}
+  
+          </div>
+  
         </div>
       </section>
+      <div class="blog-pagination">
+        <ul
+          class="justify-content-center"
+          style="display: flex; gap: space-evenly; list-style: none"
+        >
+          {% if page.has_previous %}
+          <li>
+            <button class="btn btn-info">
+              <a href="?page={{ page.previous_page_number }}" class="text-light"
+                >{{ page.previous_page_number }}</a
+              >
+            </button>
+          </li>
+          {% endif %}
+
+          <span class="current-page mx-2">
+            <button class="btn btn-dark text-light">
+              <li class="active" style="list-style: none">
+                <a href="#" class="text-light">{{ page.number }}</a>
+              </li>
+            </button>
+          </span>
+
+          {% if page.has_next %}
+          <li>
+            <button class="btn btn-info text-light">
+              <a
+                href="?page={{ page.next_page_number }}"
+                style="list-style: none"
+                class="text-light"
+                >{{ page.next_page_number }}</a
+              >
+            </button>
+          </li>
+
+          {% endif %}
+        </ul>
+      </div>
+      
       <!-- End Our Projects Section -->
     </main>
     <!-- End #main -->
