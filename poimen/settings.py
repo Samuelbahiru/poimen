@@ -166,7 +166,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'nahomkebede91@gmail.com'  
 EMAIL_HOST_PASSWORD = 'mdbdmpwldhfhozen'  
 EMAIL_USE_TLS = True 
-DEFAULT_FROM_EMAIL = 'poimenkb@gmail.com'
+DEFAULT_FROM_EMAIL = 'nahomkebede91@gmail.com'
 
 # ...
 

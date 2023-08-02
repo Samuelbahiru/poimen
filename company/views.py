@@ -135,7 +135,7 @@ def send_email(request):
             subject,
             f"Name: {name}\nEmail: {email}\n\n{message}",
             email,
-            ['poimenkb@gmail.com'],
+            ['nahomkebede91@gmail.com'],
             fail_silently=True,
         )
 
