@@ -163,8 +163,8 @@ CSRF_TRUSTED_ORIGINS = ['https://poimenministry.org']
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587  
-EMAIL_HOST_USER = 'poimenkb@gmail.com'  
-EMAIL_HOST_PASSWORD = 'rhwnogylpdfgooin'  
+EMAIL_HOST_USER = 'nahomkebede91@gmail.com'  
+EMAIL_HOST_PASSWORD = 'mdbdmpwldhfhozen'  
 EMAIL_USE_TLS = True 
 DEFAULT_FROM_EMAIL = 'poimenkb@gmail.com'
 
